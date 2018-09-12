@@ -1,0 +1,70 @@
+/********************************/
+@import "../../Style.scss";
+
+.errorBorder {
+    margin-bottom: 9px !important;
+    label{
+        > input{
+            border-color:#f00 !important;
+        }
+    }
+}
+
+.error_text{
+    @extend %fullWrap;
+    @include titleHev(12px, #e74b24, 16px );
+    margin-top: 5px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.floatLabelWrap{  
+    @extend %fullWrap; 
+    @include borderRadius(4px);
+    // @include marginTopBottom(10px);
+    height: 44px;
+    border: 1px solid #DADCDF;
+    background-color: #F9FAFB;	
+    position: relative;
+    font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    
+    .inputTxtStyle{
+      @include borderRadius(0px);
+      border:0px;
+      background-color: transparent;
+      height: 42px;
+      position: relative;
+      z-index: 1;
+      padding: 5px 10px;
+      padding-top: 20px;
+      color: #1C1C1C;
+      font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  
+      &:focus + .labelTxt { 
+        transform: translateY(-8px);
+        font-size: 11px;
+      }
+    }
+  
+    .labelTxt{
+      @include paddingAll(10px);
+      @include titleHev(16px, #939393, 22px );
+      position: absolute;
+      margin-bottom: 0px;
+      left:0px;
+      z-index: 0;
+      transform: translateY(0px);
+      transition: all .2s ease-out;
+    }
+  
+  }  
+  
+  .labelActive .floatLabelWrap .labelTxt { 
+        transform: translateY(-8px);
+        font-size: 11px;
+  }
+   
+  .floatLabelWrap.errorBorder{
+    border: 1px solid #e74b24;
+  }
+  
